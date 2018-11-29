@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
-import logger
+import logging
+from logging import getLogger, StreamHandler, Formatter
 import cek
 
+logger = getLogger("LogTest")
 app = Flask(__name__)
 
 clova = cek.Clova(
