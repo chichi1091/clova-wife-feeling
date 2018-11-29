@@ -7,7 +7,7 @@ logger = getLogger("LogTest")
 app = Flask(__name__)
 
 clova = cek.Clova(
-    application_id="com.herokuapp.wife_feeling",
+    application_id="xxxxxxxx",
     default_language="ja",
     debug_mode=True)
 
