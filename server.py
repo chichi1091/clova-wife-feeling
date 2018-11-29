@@ -51,5 +51,5 @@ def end_handler(clova_request):
 def default_handler(request):
     return clova.response("Sorry I don't understand! Could you please repeat?")
 
-# if __name__ == '__main__':
-#     app.run()
+if __name__ == '__main__':
+    app.run()
