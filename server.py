@@ -1,4 +1,5 @@
-from flask import Flask, request, jsonify, logger
+from flask import Flask, request, jsonify
+import logger
 import cek
 
 app = Flask(__name__)
