@@ -27,7 +27,13 @@ def launch_request_handler(clova_request):
 @clova.handle.intent("WifeStatusIntent")
 def wife_status_handler(clova_request):
     print("ワイフインテント")
-    message_japanese = cek.Message(message="気分はいい感じです", language="ja")
+    slot = clova_request.slot_value("status")
+    message_japanese = cek.Message(message="もう一回言って下さい", language="ja")
+
+    if u"気分" in slot:
+        message_japanese = cek.Message(message="Clovaの気分はいい感じです", language="ja")
+    elif u"欲しい物" in slot:
+        message_japanese = cek.Message(message="Clovaは旅行に行きたがっています", language="ja")
     response = clova.response([message_japanese])
     return response
 
