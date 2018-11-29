@@ -36,7 +36,7 @@ def wife_status_handler(clova_request):
     if u"気分" in slot:
         message_japanese = cek.Message(message="Clovaの気分はいい感じです", language="ja")
     elif u"欲しい物" in slot:
-        message_japanese = cek.Message(message="Clovaは旅行に行きたがっています", language="ja")
+        message_japanese = cek.Message(message="Clovaはお金がほしいです", language="ja")
     response = clova.response([message_japanese])
     return response
 
