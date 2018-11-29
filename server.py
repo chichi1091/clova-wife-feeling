@@ -31,12 +31,16 @@ def launch_request_handler(clova_request):
 def wife_status_handler(clova_request):
     print("ワイフインテント")
     slot = clova_request.slot_value("status")
-    message_japanese = cek.Message(message="もう一回言って下さい", language="ja")
 
-    if u"気分" in slot:
+    if slot == None:
+        message_japanese = cek.Message(message="もう一回言って下さい", language="ja")
+    elif u"気分" in slot:
         message_japanese = cek.Message(message="Clovaの気分はいい感じです", language="ja")
     elif u"欲しい物" in slot:
         message_japanese = cek.Message(message="Clovaはお金がほしいです", language="ja")
+    else:
+        message_japanese = cek.Message(message="もう一回言って下さい", language="ja")
+
     response = clova.response([message_japanese])
     return response
 
